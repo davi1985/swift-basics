@@ -313,3 +313,27 @@ func login(username: String?, phone: String?, password: String) ->  LoginMethod?
 
 let loginMethod = login(username: nil, phone: "88", password: "nil")
 
+// Guard let
+func fetchProductById(id: Int) -> String {
+    let dict = [
+        1: "iPhone",
+        2: "Macbook",
+        3: "iPad"
+    ]
+    
+//    let product = dict[id]
+    
+//    if let product = dict[id] {
+//        return product
+//    }
+    
+//    return "Nenhum produto encontrado!"
+    
+    guard let product = dict[id] else {
+        return "Nenhum produto encontrado!"
+    }
+    
+    return product
+}
+
+print(fetchProductById(id: 2))
